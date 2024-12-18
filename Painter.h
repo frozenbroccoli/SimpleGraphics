@@ -1,6 +1,13 @@
+#ifndef PAINTER_H
+#define PAINTER_H
+
 class Painter {
+	unsigned char* screen;
+
+public:
+	Painter(unsigned char* sc);
+
 	void set_pixel(
-		unsigned char* screen,
 		int bytes_per_row,
 		int num_rows,
 		int x,
@@ -8,3 +15,5 @@ class Painter {
 		bool light_up
 	);
 };
+
+#endif
