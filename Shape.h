@@ -3,13 +3,14 @@
 
 #include "Point.h"
 #include "Color.h"
+#include "Screen.h"
 
 class Shape {
 	Point center;
 	Color col;
-	unsigned char* screen;
+	Screen screen;
 public:
-	Shape(Point center_point, Color color, unsigned char* screen_array);
+	Shape(Point center_point, Color color, Screen screen);
 	Point where();	
 	void move(Point to);
 	virtual void draw();
