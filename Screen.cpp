@@ -20,6 +20,10 @@ void Screen::set_pixel(
     int right_shift = x >> 3;
     int down_shift = width * y;
 
+    if (right_shift >= width || y >= height) {
+        throw std::runtime_error("Index out of bounds of screen size");
+    }
+
     if (light_up) {
         (screen[right_shift + down_shift]) |= 0b10000000 >> (x & 7);
     } else {
@@ -53,7 +57,7 @@ int main() {
         Screen screen {width, height};
         std::cout << "\nOriginal screen: " << std::endl;
         screen.display();
-        screen.set_pixel(9, 1, true);
+        screen.set_pixel(24, 1, true);
         std::cout << "\nUpdated Screen: " << std::endl;
         screen.display();
         return 0;
