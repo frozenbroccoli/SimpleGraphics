@@ -4,11 +4,14 @@
 #include <iostream>
 
 class Screen {
-    unsigned char* screen;
     int width;
     int height;
+    unsigned char* screen;
+
 public:
-    Screen(unsigned char* screen_array, int w, int h);
+    Screen(int w, int h);
+    ~Screen();
+    void display();
     void set_pixel(
         int x,
         int y,
