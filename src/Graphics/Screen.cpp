@@ -41,28 +41,8 @@ std::ostream& operator<<(std::ostream& os, const Screen& screen) {
             for (int bit_count = CHAR_BIT - 1; bit_count >= 0; --bit_count) {
                 os << ((screen.screen[y * screen.width + x] >> bit_count) & 0b00000001);
             }
-            if (x < screen.width - 1) {
-                os << ' ';
-            }
         }
         os << std::endl;
     }
     return os;
-}
-
-int main() {
-    try {
-        int width {3};
-        int height {5};
-        Screen screen {width, height};
-        std::cout << "\nOriginal screen: " << std::endl;
-        screen.display();
-        screen.set_pixel(24, 1, true);
-        std::cout << "\nUpdated Screen: " << std::endl;
-        screen.display();
-        return 0;
-    } catch (std::runtime_error& e) {
-        std::cerr << "Exception: " << e.what() << std::endl;
-        return -1;
-    }
 }
