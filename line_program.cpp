@@ -7,11 +7,10 @@
 int main() {
     try {
         Screen screen {2, 5};
-        Point center {8, 2};
         Color white {true};
-        int length {5};
-        double angle {0.0};
-        Line line {center, white, length, angle};
+        Point start {4, 4, white};
+        Point end {14, 1, white};
+        Line line {start, end, white};
         line.draw(&screen);
         screen.display();
     }

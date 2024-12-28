@@ -1,19 +1,23 @@
 #ifndef LINE_H
 #define LINE_H
 
-#include "Shape.h"
 #include "Point.h"
+#include "Color.h"
+#include "Screen.h"
 
-class Line: public Shape {
+class Line {
+private:
+    int delta_x;
+    int delta_y;
+
 public:
     Point start;
     Point end;
-    int length;
+    double length;
     double angle;
+    Color color;
 
-    Line();
-    Line(Point center, Color color, int len, double ang);
-    Line (Point start, Point end, Color color);
+    Line (Point s, Point e, Color col);
     ~Line();
     void draw(Screen* screen);
     void rotate(int angle, Screen* screen);
