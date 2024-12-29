@@ -36,7 +36,7 @@ void Screen::display() {
 }
 
 std::ostream& operator<<(std::ostream& os, const Screen& screen) {
-    for (int y = 0; y < screen.height; y++) {
+    for (int y = screen.height - 1; y >= 0; y--) {
         for (int x = 0; x < screen.width; x++) {
             for (int bit_count = CHAR_BIT - 1; bit_count >= 0; --bit_count) {
                 os << ((screen.screen[y * screen.width + x] >> bit_count) & 0b00000001);

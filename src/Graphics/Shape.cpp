@@ -5,7 +5,7 @@
 
 Shape::Shape() {
 	col = Color {true};
-	center = Point {0, 0, col};
+	center = Point {0, 0};
 }
 
 Shape::Shape(Point center_point, Color color) {

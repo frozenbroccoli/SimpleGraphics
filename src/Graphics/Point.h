@@ -8,10 +8,13 @@ class Point {
 public:
 	int x;
 	int y;
-	Color color;
+	double r;
+	double theta;
 	Point();
-	Point(int x_coord, int y_coord, Color col);
-	void draw(Screen* screen);
+	Point(int x_coord, int y_coord);
+	Point(double r_polar, double theta_polar);
+	Point rotate(Point pivot, double delta_angle);
+	void draw(Screen* screen, Color color);
 };
 
 #endif

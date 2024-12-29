@@ -8,7 +8,7 @@ int main() {
         Screen screen {width, height};
         std::cout << "\nOriginal screen: " << std::endl;
         screen.display();
-        screen.set_pixel(1, 1, true);
+        screen.set_pixel(0, 0, true);
         std::cout << "\nUpdated Screen: " << std::endl;
         screen.display();
         return 0;

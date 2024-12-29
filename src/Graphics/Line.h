@@ -7,20 +7,20 @@
 
 class Line {
 private:
-    int delta_x;
-    int delta_y;
+    double delta_x;
+    double delta_y;
 
 public:
     Point start;
     Point end;
+    Point center;    
     double length;
     double angle;
-    Color color;
 
-    Line (Point s, Point e, Color col);
+    Line (Point s, Point e);
     ~Line();
-    void draw(Screen* screen);
-    void rotate(int angle, Screen* screen);
+    Line rotate(Point pivot, double delta_angle);
+    void draw(Screen* screen, Color color);
 };
 
 #endif
