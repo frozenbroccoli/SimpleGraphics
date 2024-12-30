@@ -1,10 +1,9 @@
 #include <iostream>
+#include <cmath>
 #include "src/Graphics/Line.h"
 #include "src/Graphics/Color.h"
 #include "src/Graphics/Screen.h"
 #include "src/Graphics/Point.h"
-
-#define PI 3.14159265359
 
 int main() {
     try {
@@ -17,8 +16,8 @@ int main() {
         Point pivot = line.center;
         std::cout << "center x: " << line.center.x << ", center y: " << line.center.y << std::endl;
         std::cout << "length: " << line.length << std::endl;
-        Line rotated_line = line.rotate(pivot, PI / 2);
-        rotated_line.draw(&screen, white);
+        line.rotate(pivot, M_PI / 2);
+        line.draw(&screen, white);
         screen.display();
     } catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;

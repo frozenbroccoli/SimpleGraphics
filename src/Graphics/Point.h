@@ -5,6 +5,8 @@
 #include "Color.h"
 
 class Point {
+private:
+	void reconstruct(Point point);
 public:
 	int x;
 	int y;
@@ -13,7 +15,10 @@ public:
 	Point();
 	Point(int x_coord, int y_coord);
 	Point(double r_polar, double theta_polar);
-	Point rotate(Point pivot, double delta_angle);
+	Point copy();
+	void move(int horizontal, int vertical);
+	void rotate(double delta_angle);
+	void rotate(Point pivot, double delta_angle);
 	void draw(Screen* screen, Color color);
 };
 

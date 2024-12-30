@@ -9,6 +9,7 @@ class Line {
 private:
     double delta_x;
     double delta_y;
+    void reconstruct(Line line);
 
 public:
     Point start;
@@ -19,7 +20,7 @@ public:
 
     Line (Point s, Point e);
     ~Line();
-    Line rotate(Point pivot, double delta_angle);
+    void rotate(Point pivot, double delta_angle);
     void draw(Screen* screen, Color color);
 };
 

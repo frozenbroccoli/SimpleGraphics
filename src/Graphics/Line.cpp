@@ -23,10 +23,21 @@ Line::~Line() {
     /* code */
 }
 
-Line Line::rotate(Point pivot, double delta_angle) {
-    Point new_start = start.rotate(pivot, delta_angle);
-    Point new_end = end.rotate(pivot, delta_angle);
-    return Line {new_start, new_end};
+void Line::reconstruct(Line line) {
+    start = line.start;
+    end = line.end;
+    center = line.center;
+    length = line.length;
+    angle = line.angle;
+    delta_x = end.x - start.x;
+    delta_y = end.y - start.y;
+}
+
+void Line::rotate(Point pivot, double delta_angle) {
+    start.rotate(pivot, delta_angle);
+    end.rotate(pivot, delta_angle);
+    Line rotated {start, end};
+    this->reconstruct(rotated);
 }
 
 void Line::draw(Screen* screen, Color color) {

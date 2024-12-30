@@ -22,11 +22,33 @@ Point::Point(double r_polar, double theta_polar) {
     y = std::round(r * std::sin(theta));
 }
 
-Point Point::rotate(Point pivot, double delta_angle) {
-    Point at_origin {x - pivot.x, y - pivot.y};
-    Point rotated_at_origin {at_origin.r, at_origin.theta + delta_angle};
-    Point rotated_at_pivot {rotated_at_origin.x + pivot.x, rotated_at_origin.y + pivot.y};
-    return rotated_at_pivot;
+void Point::reconstruct(Point point) {
+    x = point.x;
+    y = point.y;
+    r = point.r;
+    theta = point.theta;
+}
+
+Point Point::copy() {
+    return Point {x, y};
+}
+
+void Point::move(int h, int v) {
+    Point moved {x + h, y + v};
+    this->reconstruct(moved);
+}
+
+void Point::rotate(double delta_angle) {
+    Point rotated {r, theta + delta_angle};
+    this->reconstruct(rotated);
+}
+
+void Point::rotate(Point pivot, double delta_angle) {
+    Point copy = this->copy();
+    copy.move(-pivot.x, -pivot.y);
+    copy.rotate(delta_angle);
+    copy.move(pivot.x, pivot.y);
+    this->reconstruct(copy);
 }
 
 void Point::draw(Screen* screen, Color color) {
