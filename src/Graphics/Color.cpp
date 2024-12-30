@@ -7,7 +7,3 @@ Color::Color() {
 Color::Color(bool v) {
     value = v;
 }
-
-bool Color::get_value() {
-    return value;
-}

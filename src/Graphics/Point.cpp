@@ -30,5 +30,5 @@ Point Point::rotate(Point pivot, double delta_angle) {
 }
 
 void Point::draw(Screen* screen, Color color) {
-    screen->set_pixel(x, y, color.get_value());
+    screen->set_pixel(x, y, color.value);
 }

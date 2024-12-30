@@ -1,13 +1,11 @@
 #ifndef COLOR_H
 #define COLOR_H
 
-class Color {
-	bool value;
- 
+class Color { 
 public:
+	bool value;
 	Color();
 	Color(bool v);
-	bool get_value();
 };
 
 #endif
