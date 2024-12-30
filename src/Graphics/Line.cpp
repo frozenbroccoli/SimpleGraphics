@@ -33,6 +33,17 @@ void Line::reconstruct(Line line) {
     delta_y = end.y - start.y;
 }
 
+Line Line::copy() {
+    return Line {start, end};
+}
+
+void Line::move(int h, int v) {
+    start.move(h, v);
+    end.move(h, v);
+    Line moved {start, end};
+    this->reconstruct(moved);
+}
+
 void Line::rotate(Point pivot, double delta_angle) {
     start.rotate(pivot, delta_angle);
     end.rotate(pivot, delta_angle);

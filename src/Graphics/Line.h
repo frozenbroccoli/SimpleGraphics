@@ -20,6 +20,8 @@ public:
 
     Line (Point s, Point e);
     ~Line();
+    Line copy();
+    void move(int horizontal, int vertical);
     void rotate(Point pivot, double delta_angle);
     void draw(Screen* screen, Color color);
 };
