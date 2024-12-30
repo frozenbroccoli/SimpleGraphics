@@ -13,8 +13,8 @@ Line::Line(Point s, Point e) {
         std::pow((delta_y), 2) + std::pow((delta_x), 2)
     );
     center = Point {
-        start.x + std::round(delta_x / 2),
-        start.y + std::round(delta_y / 2)
+        start.x + static_cast<int>(std::round(delta_x / 2)),
+        start.y + static_cast<int>(std::round(delta_y / 2))
     };
     angle = std::atan2(delta_y, delta_x);
 }
@@ -35,8 +35,8 @@ void Line::draw(Screen* screen, Color color) {
     double y_increment = delta_y / steps;
     Point curr;
     for (int i = 0; i < steps; i++) {
-        curr.x = start.x + std::round(i * x_increment);
-        curr.y = start.y + std::round(i * y_increment);
+        curr.x = start.x + static_cast<int>(std::round(i * x_increment));
+        curr.y = start.y + static_cast<int>(std::round(i * y_increment));
         curr.draw(screen, color);
     }
     end.draw(screen, color);

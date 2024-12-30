@@ -11,11 +11,13 @@ int main() {
         Screen screen {10, 50};
         Color white {true};
         Point start {20, 5};
-        Point end {35, 15};
+        Point end {20, 15};
         Line line {start, end};
         line.draw(&screen, white);
-        Point pivot {30, 5};
-        Line rotated_line = line.rotate(pivot, PI / 6);
+        Point pivot = line.center;
+        std::cout << "center x: " << line.center.x << ", center y: " << line.center.y << std::endl;
+        std::cout << "length: " << line.length << std::endl;
+        Line rotated_line = line.rotate(pivot, PI / 2);
         rotated_line.draw(&screen, white);
         screen.display();
     } catch (const std::exception& e) {
