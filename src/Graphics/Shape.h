@@ -8,13 +8,12 @@
 class Shape {
 public:	
 	Point center;
-	Color col;
 	Shape();
-	Shape(Point center_point, Color color);
+	Shape(Point center_point);
 	Point where();	
-	void move(Point to, Screen* screen);
+	virtual void move(Point to);
 	virtual void draw(Screen* screen);
-	virtual void rotate(int angle, Screen* screen);	
+	virtual void rotate(double delta_angle);	
 };
 
 #endif
