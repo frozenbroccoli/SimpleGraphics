@@ -19,18 +19,14 @@ Line::Line(Point s, Point e) {
     angle = std::atan2(delta_y, delta_x);
 }
 
-Line::~Line() {
-    /* code */
-}
-
 void Line::reconstruct(Line line) {
     start = line.start;
     end = line.end;
     center = line.center;
     length = line.length;
     angle = line.angle;
-    delta_x = end.x - start.x;
-    delta_y = end.y - start.y;
+    delta_x = line.delta_x;
+    delta_y = line.delta_y;
 }
 
 Line Line::copy() {

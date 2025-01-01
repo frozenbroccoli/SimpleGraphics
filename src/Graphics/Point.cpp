@@ -1,13 +1,6 @@
 #include "Point.h"
 #include "cmath"
 
-Point::Point() {
-    x = 0;
-    y = 0;
-    r = 0.0;
-    theta = 0.0;
-}
-
 Point::Point(int x_coord, int y_coord) {
     x = x_coord;
     y = y_coord;

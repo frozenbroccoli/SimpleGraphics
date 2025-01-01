@@ -12,9 +12,11 @@ public:
 	int y;
 	double r;
 	double theta;
-	Point();
+	
+	Point() = default;
 	Point(int x_coord, int y_coord);
 	Point(double r_polar, double theta_polar);
+	~Point() = default;
 	Point copy();
 	void move(int horizontal, int vertical);
 	void rotate(double delta_angle);

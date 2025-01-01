@@ -18,8 +18,9 @@ public:
     double length;
     double angle;
 
-    Line (Point s, Point e);
-    ~Line();
+    Line() = default; 
+    Line(Point s, Point e);
+    ~Line() = default;
     Line copy();
     void move(int horizontal, int vertical);
     void rotate(Point pivot, double delta_angle);
