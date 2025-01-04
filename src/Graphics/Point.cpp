@@ -1,4 +1,4 @@
-#include "Point.h"
+#include "Graphics/Point.h"
 #include "cmath"
 
 Point::Point(int x_coord, int y_coord) {

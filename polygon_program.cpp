@@ -1,5 +1,5 @@
 #include <cmath>
-#include "src/Graphics/Polygon.h"
+#include "Graphics/Polygon.h"
 
 int main() {
     Screen screen {10, 50};

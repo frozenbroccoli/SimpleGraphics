@@ -1,4 +1,4 @@
-#include "Arc.h"
+#include "Graphics/Arc.h"
 #include "cmath"
 
 Arc::Arc(Point center_of_curvature, Point st, double ang) {

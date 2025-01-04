@@ -1,5 +1,5 @@
 #include <cmath>
-#include "Polygon.h"
+#include "Graphics/Polygon.h"
 
 Polygon::Polygon(Point c, uint8_t ns, double r) {
     center = c.copy();

@@ -1,5 +1,5 @@
 #include <cmath>
-#include "src\Graphics\Arc.h"
+#include "Graphics/Arc.h"
 
 int main() {
     Screen screen {10, 50};

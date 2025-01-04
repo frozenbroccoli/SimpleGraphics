@@ -1,9 +1,9 @@
 #include <iostream>
 #include <cmath>
-#include "src/Graphics/Line.h"
-#include "src/Graphics/Color.h"
-#include "src/Graphics/Screen.h"
-#include "src/Graphics/Point.h"
+#include "Graphics/Line.h"
+#include "Graphics/Color.h"
+#include "Graphics/Screen.h"
+#include "Graphics/Point.h"
 
 int main() {
 	try {

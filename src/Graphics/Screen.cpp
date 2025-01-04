@@ -1,6 +1,6 @@
 #include <iostream>
 #include <climits>
-#include "Screen.h"
+#include "Graphics/Screen.h"
 
 Screen::Screen(int w, int h) {
     width = w;

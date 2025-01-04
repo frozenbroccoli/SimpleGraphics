@@ -1,5 +1,5 @@
 #include <cmath>
-#include "Circle.h"
+#include "Graphics/Circle.h"
 
 Circle::Circle(Point c, int r) {
     center = c;
