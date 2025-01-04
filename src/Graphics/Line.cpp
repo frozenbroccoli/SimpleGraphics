@@ -1,7 +1,4 @@
 #include "Line.h"
-#include "Point.h"
-#include "Screen.h"
-#include "Shape.h"
 #include "cmath"
 
 Line::Line(Point s, Point e) {
