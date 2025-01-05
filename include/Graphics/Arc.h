@@ -5,17 +5,17 @@
 #include "Screen.h"
 #include "Color.h"
 
-class Arc {
+class SimpleArc {
 public:
     Point coc;
     int roc;
     Point start;
     double angle;
 
-    Arc() = default;
-    Arc(Point coc, Point start, double angle);
-    ~Arc() = default;
-    Arc copy();
+    SimpleArc() = default;
+    SimpleArc(Point coc, Point start, double angle);
+    ~SimpleArc() = default;
+    SimpleArc copy();
     void move(int horizontal, int vertical);
     void rotate(Point pivot, double delta_angle);
     void draw(Screen* screen, Color color);

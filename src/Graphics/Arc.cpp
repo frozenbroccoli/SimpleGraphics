@@ -1,7 +1,7 @@
 #include "Graphics/Arc.h"
 #include "cmath"
 
-Arc::Arc(Point center_of_curvature, Point st, double ang) {
+SimpleArc::SimpleArc(Point center_of_curvature, Point st, double ang) {
     coc = center_of_curvature;
     start = st;
     angle = ang;
@@ -10,21 +10,21 @@ Arc::Arc(Point center_of_curvature, Point st, double ang) {
     );
 }
 
-Arc Arc::copy() {
-    return Arc {coc, start, angle};
+SimpleArc SimpleArc::copy() {
+    return SimpleArc {coc, start, angle};
 }
 
-void Arc::move(int horizontal, int vertical) {
+void SimpleArc::move(int horizontal, int vertical) {
     coc.move(horizontal, vertical);
     start.move(horizontal, vertical);
 }
 
-void Arc::rotate(Point pivot, double delta_angle) {
+void SimpleArc::rotate(Point pivot, double delta_angle) {
     coc.rotate(pivot, delta_angle);
     start.rotate(pivot, delta_angle);
 }
 
-void Arc::draw(Screen* screen, Color color) {
+void SimpleArc::draw(Screen* screen, Color color) {
     int steps = static_cast<int>(std::round(roc * angle));
     double increment = angle / steps;
     for (int i = 0; i < steps; i++) {
