@@ -2,15 +2,18 @@
 
 
 int main() {
-    Screen screen {10, 50};
+    Screen screen {100, 800};
     Color white {true};
-    Point center {40, 25};
-    int radius {20};
+    Point center {400, 500};
+    int radius {200};
     Circle circle {center, radius};
     circle.draw(&screen, white);
-    circle.move(10, 0);
-    circle.draw(&screen, white);
-    circle.move(-20, 0);
+    screen.display();
+    circle.move(50, 0);
     circle.draw(&screen, white);
     screen.display();
+    circle.move(-100, 0);
+    circle.draw(&screen, white);
+    screen.display();
+    
 }

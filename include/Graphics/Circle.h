@@ -6,7 +6,7 @@
 
 class Circle : public Shape {
 private:
-    Arc perimeter;
+    SimpleArc perimeter;
 
 public:
     Point center;

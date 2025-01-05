@@ -5,7 +5,7 @@ Circle::Circle(Point c, int r) {
     center = c;
     radius = r;
     Point arc_start {center.x + radius, center.y};
-    perimeter = Arc {center, arc_start, 2 * M_PI};
+    perimeter = SimpleArc {center, arc_start, 2 * M_PI};
 }
 
 Circle Circle::copy() {
