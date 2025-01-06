@@ -1,3 +1,4 @@
+#include <conio.h>
 #include "Graphics/Circle.h"
 
 
@@ -9,11 +10,17 @@ int main() {
     Circle circle {center, radius};
     circle.draw(&screen, white);
     screen.display();
+    std::cout << "Press any key to proceed..." << std::endl;
+    _getch();
     circle.move(50, 0);
     circle.draw(&screen, white);
     screen.display();
+    std::cout << "Press any key to proceed..." << std::endl;
+    _getch();
     circle.move(-100, 0);
     circle.draw(&screen, white);
     screen.display();
-    
+    std::cout << "Press any key to proceed..." << std::endl;
+    _getch();
+
 }

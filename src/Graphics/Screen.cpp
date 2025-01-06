@@ -1,6 +1,5 @@
 #include <iostream>
 #include <climits>
-#include <conio.h>
 #include "Graphics/Screen.h"
 
 Screen::Screen(int w, int h) {
@@ -11,7 +10,6 @@ Screen::Screen(int w, int h) {
     width = w;
     height = h;
     screen = new unsigned char[width * height] {0b00000000};
-    framebuffer = nullptr;
     hdc = GetDC(NULL);
     if (!hdc) {
         throw std::runtime_error("Failed to get DC");
@@ -61,10 +59,10 @@ void Screen::set_pixel(
     int bit_index = x & 7;
 
     if (light_up) {
-        (screen[byte_index]) |= 0b10000000 >> bit_index;
+        screen[byte_index] |= 0b10000000 >> bit_index;
         framebuffer[y * (width * 8) + x] = 0xFFFFFF;
     } else {
-        (screen[byte_index]) &= ~(0b10000000 >> bit_index);
+        screen[byte_index] &= ~(0b10000000 >> bit_index);
         framebuffer[y * (width * 8) + x] = 0x000000;
     }
 }
@@ -85,10 +83,7 @@ void Screen::display() {
         throw std::runtime_error("Failed to blit to screen");
     }
 
-    DeleteDC(mem_dc);    
-
-    std::cout << "Press any key to stop the display..." << std::endl;
-    _getch();
+    DeleteDC(mem_dc);
 }
 
 std::ostream& operator<<(std::ostream& os, const Screen& screen) {
